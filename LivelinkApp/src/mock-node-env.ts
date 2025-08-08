@@ -30,5 +30,8 @@ globalThis.AudioContext = class {
             connect: () => { },
         };
     }
+    release() {
+
+    }
     destination = {};
 };

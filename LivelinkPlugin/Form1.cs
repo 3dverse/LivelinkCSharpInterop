@@ -121,7 +121,8 @@ namespace LivelinkClient
                 {
                     try
                     {
-                        // TODO: This crash and exit with code 1, no idea why
+                        // TODO: investigate, the disconnection seems to work but the user avatar
+                        // remains visible in the 3dverse-editor top right corner.
                         var app = _runtime.Import("./js/app/app.js");
                         var disconnect = (JSFunction)app["disconnect"];
                         disconnect.Call(JSValue.Undefined);
