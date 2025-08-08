@@ -41,7 +41,7 @@ export async function connect(): Promise<void> {
 export async function disconnect(): Promise<void> {
     try {
         if (instance) {
-            instance.disconnect();
+            await instance.disconnect();
         }
     } catch (error: unknown) {
         console.error(error);

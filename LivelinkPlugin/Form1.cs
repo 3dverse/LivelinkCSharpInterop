@@ -121,6 +121,7 @@ namespace LivelinkClient
                 {
                     try
                     {
+                        // TODO: This crash and exit with code 1, no idea why
                         var app = _runtime.Import("./js/app/app.js");
                         var disconnect = (JSFunction)app["disconnect"];
                         disconnect.Call(JSValue.Undefined);
