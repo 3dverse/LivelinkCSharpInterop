@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.JavaScript.LibNode" Version="20.1800.215" />
+    <PackageReference Include="Microsoft.JavaScript.NodeApi" Version="0.9.15" />
+  </ItemGroup>
+  <Target Name="CopyNodeOutput" AfterTargets="Build">
+     <!-- Source and destination -->
+     <ItemGroup>
+       <JsTest Include="..\LivelinkPlugin\js\**\*" />
+       <NodeBuildFiles Include="..\LivelinkApp\_build\src\**\*" />
+       <NodeModules Include="..\LivelinkApp\node_modules\**\*" />
+     </ItemGroup>
+
+     <Copy SourceFiles="@(JsTest)" DestinationFolder="$(OutputPath)\js\%(RecursiveDir)" SkipUnchangedFiles="true" />
+     <Copy SourceFiles="@(NodeBuildFiles)" DestinationFolder="$(OutputPath)\js\app\%(RecursiveDir)" SkipUnchangedFiles="true" />
+     <Copy SourceFiles="@(NodeModules)" DestinationFolder="$(OutputPath)\js\app\node_modules\%(RecursiveDir)" SkipUnchangedFiles="true" />
+
+  </Target>
+</Project>

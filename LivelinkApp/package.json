@@ -1,0 +1,24 @@
+{
+  "name": "livelinkwrapper",
+  "version": "1.0.0",
+  "main": "_build/src/app.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "description": "",
+  "dependencies": {
+    "@3dverse/livelink": "^0.8.47",
+    "@types/ws": "8.18.1",
+    "eslint": "^9.32.0",
+    "node-api-dotnet": "^0.9.15",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "typescript": "5.8.3"
+  }
+}

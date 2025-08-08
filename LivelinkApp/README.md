@@ -1,0 +1,3 @@
+A simple @3dverse/livelink app to test .NET C# LivelinkPlugin. It pops animated cubes.
+
+Seems you have to manually rebuild the project if a ts file changed, do not know why...
