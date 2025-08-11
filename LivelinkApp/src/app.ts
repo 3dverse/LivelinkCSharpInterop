@@ -12,23 +12,17 @@ let interval: NodeJS.Timeout;
 let instance: Livelink;
 let cubes: Entity[] = [];
 
-export function test() { return 'test'; }
-
 //------------------------------------------------------------------------------
 export async function connect(): Promise<void> {
     try {
-        //@ts-ignore
-        Livelink._api_url = config.livelink.apiUrl;
-        //@ts-ignore
-        Livelink._editor_url = config.livelink.editorUrl;
-
         instance = await Livelink.join_or_start({
             scene_id: config.session.sceneId,
             token: config.session.token,
             is_transient: true,
+            is_headless: true,
         });
 
-        await instance.configureHeadlessClient();
+        await instance.startHeadlessClient();
 
         instance.startStreaming();
     } catch (error: unknown) {
@@ -87,7 +81,7 @@ async function createCube(instance: Livelink) {
     const entity = await instance.scene.newEntity({
         name: "Cube",
         components: {
-            mesh_ref: { value: "c45d7c05-7c06-4939-b70c-8dd5ce1212bc" },
+            mesh_ref: { value: "0577814f-4677-420b-89e8-1e5a4dd56914" },
             local_transform: {
                 position: initial_position,
             },

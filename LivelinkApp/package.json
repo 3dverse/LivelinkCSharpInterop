@@ -11,7 +11,7 @@
   "type": "module",
   "description": "",
   "dependencies": {
-    "@3dverse/livelink": "^0.8.47",
+    "@3dverse/livelink": "^0.8.49",
     "@types/ws": "8.18.1",
     "eslint": "^9.32.0",
     "node-api-dotnet": "^0.9.15",
